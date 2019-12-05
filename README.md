@@ -1,5 +1,7 @@
 # console-drawing
 
+To run use: `mvn exec:java`
+
 ## Problem Statement
 
 *** The Problem ***
