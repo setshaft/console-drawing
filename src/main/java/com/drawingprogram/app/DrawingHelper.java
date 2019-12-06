@@ -7,7 +7,7 @@ public class DrawingHelper {
   public DrawingHelper() {
   }
 
-  public DrawingHelper(int width, int height) {
+  public DrawingHelper(final int width, final int height) {
     if (width < 1 || height < 1) {
       throw new IllegalArgumentException("Canvas measurements cannot be less than 1");
     }
@@ -53,7 +53,7 @@ public class DrawingHelper {
     streamLine(x1, y2, x2, y2, character);
   }
 
-  public void fillColor(int x, int y, char character) {
+  public void fillColor(final int x, final int y, final char character) {
     checkIfCanvasIsThere();
     if (this.charStream[y][x] != '\u0000') {
       return;
