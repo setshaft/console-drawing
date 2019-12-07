@@ -24,7 +24,7 @@ public class DrawingHelper {
     streamLine(this.width - 1, 1, this.width - 1, this.height - 2, '|');
   }
 
-  public void print() {
+  public StringBuilder print() {
     checkIfCanvasIsThere();
     final StringBuilder stream = new StringBuilder();
     for (int yAxis = 0; yAxis < this.height; yAxis++) {
@@ -34,6 +34,7 @@ public class DrawingHelper {
       stream.append("\n");
     }
     System.out.println(stream.toString());
+    return stream;
   }
 
   public void streamLine(final int x1, final int y1, final int x2, final int y2, final char character) {
