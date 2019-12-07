@@ -39,6 +39,9 @@ public class DrawingHelper {
 
   public void streamLine(final int x1, final int y1, final int x2, final int y2, final char character) {
     checkIfCanvasIsThere();
+    if (!((x1 == x2) || (y1 == y2))) {
+      throw new IllegalArgumentException("Currently only horizontal or vertical lines are supported");
+    }
     for (int yAxis = y1; yAxis <= y2; yAxis++) {
       for (int xAxis = x1; xAxis <= x2; xAxis++) {
         this.charStream[yAxis][xAxis] = character;
