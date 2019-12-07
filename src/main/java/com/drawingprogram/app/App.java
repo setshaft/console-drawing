@@ -27,7 +27,7 @@ class App {
         return Integer.parseInt(str);
     }
 
-    private void draw(final String command) {
+    public void draw(final String command) {
         final String[] args = command.split(" ");
         final String commandType = args[0];
         try {
