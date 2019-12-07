@@ -1,5 +1,7 @@
 # console-drawing
 
+This is a maven based project. Should install maven before executing the below commands.
+
 To run: `mvn exec:java`\
 To run unit tests: `mvn test`\
 Code Coverage can found at `/target/site/jacoco/index.html` after executing the above command.
