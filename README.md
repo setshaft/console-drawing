@@ -1,10 +1,47 @@
 # console-drawing
 
-This is a maven based project. Should install maven before executing the below commands.
+This is a maven based project. Maven should be installed before running the project.
 
-To run: `mvn exec:java`\
-To run unit tests: `mvn test`\
-Code Coverage can found at `/target/site/jacoco/index.html` after executing the above command.
+### Dependencies
+
+Note that this program require `Java 8`.
+
+maven - 1.8
+
+junit - 5.3.1
+
+jacoco - 0.8.2 # to generate coverage files
+
+### Compile and Run on command line
+
+After installing maven from the terminal change project root folder directory and use a command of the form
+
+`$ mvn exec:java`
+
+Which will execute the code and gives the chance to enter command.
+
+As long as your compiler supports Java 8 or higher, there should be no errors.
+
+Please find the commands supported from problem statement below.
+
+For running tests and checking the coverage run
+
+`$ mvn test`
+
+After the command is executed successfully, Code Coverage can be found at `${root path}/target/site/jacoco/index.html` after executing the above command.
+
+### Structure of the project:
+
+    .
+    ├── ...
+    ├── src/main/java/com/drawingprogram/app # main code
+    │   ├── App                 # Main class
+    │   ├── DrawingHelper       # Helper class which has all the logic
+    └── src/test/java/com/drawingprogram/app # unit tests
+    │   ├── AppTest
+    │   ├── Constants     # Constants used in test cases
+    │   ├── DrawingHelperTest
+    └── ...
 
 ## Problem Statement
 
