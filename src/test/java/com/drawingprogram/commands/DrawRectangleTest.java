@@ -8,12 +8,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class DrawRectangleTest {
     @Test
-    public void testCreate() throws Exception {
+    public void rectangle() throws Exception {
         new DrawRectangle("1", "1", "1", "2");
     }
 
     @Test
-    public void testCreate1() throws Exception {
+    public void getters() throws Exception {
         DrawRectangle rectangle = new DrawRectangle("1", "1", "1", "2");
         int x1 = rectangle.getX1();
         int x2 = rectangle.getX2();
@@ -25,23 +25,18 @@ public class DrawRectangleTest {
         Assert.assertThat(y2, is(2));
     }
 
-    // @Test(expected = InvalidCommandArguments.class)
-    // public void testCreate2() throws Exception {
-    // new DrawRectangle("1", "-1", "1", "2");
-    // }
-
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate3() throws Exception {
+    public void invalidRectangle() throws Exception {
         new DrawRectangle("1", "1");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate4() throws Exception {
+    public void invalidRectangle2() throws Exception {
         new DrawRectangle("1");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate6() throws Exception {
+    public void invalidRectangle3() throws Exception {
         new DrawRectangle();
     }
 }

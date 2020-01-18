@@ -10,19 +10,19 @@ public class CanvasTest {
   private Canvas canvas;
 
   @Before
-  public void setUp() throws Exception {
+  public void beforeAll() throws Exception {
     canvas = new Canvas(20, 4);
   }
 
   // empty canvas
   @Test
-  public void create() throws Exception {
+  public void canvas() throws Exception {
     Assert.assertEquals(canvas.render().toString(), EMPTY_CANVAS204);
   }
 
   // add horizontal line
   @Test
-  public void addEntity3() throws Exception {
+  public void streamLine() throws Exception {
     Line line = new Line(2, 2, 4, 2);
     canvas.streamType(line);
     Assert.assertEquals(canvas.render().toString(), LINE2242);
@@ -36,21 +36,21 @@ public class CanvasTest {
   }
 
   @Test
-  public void addEntity5() throws Exception {
+  public void streamBucketFill() throws Exception {
     Bucket fill = new Bucket(10, 3, 'o');
     canvas.streamType(fill);
     Assert.assertEquals(canvas.render().toString(), FILL103);
   }
 
   @Test(expected = IllegalStateException.class)
-  public void addEntity6() throws Exception {
+  public void invalidFill() throws Exception {
     Bucket fill = new Bucket(10, 3, 'o');
     canvas.charStream = null;
     canvas.streamType(fill);
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void IllegalArgumentException() throws Exception {
+  public void invalidCanvas() throws Exception {
     canvas = new Canvas(-1, 1);
   }
 

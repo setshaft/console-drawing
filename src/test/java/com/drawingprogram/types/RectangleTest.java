@@ -6,12 +6,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class RectangleTest {
     @Test
-    public void create() throws Exception {
+    public void rectangle() throws Exception {
         new Rectangle(1, 2, 1, 3);
     }
 
     @Test
-    public void create7() {
+    public void getters() {
         Rectangle rectangle = new Rectangle(1, 1, 1, 2);
         int x1 = rectangle.getX1();
         int x2 = rectangle.getX2();
@@ -24,7 +24,7 @@ public class RectangleTest {
     }
 
     @Test
-    public void create4() throws Exception {
+    public void stream() throws Exception {
         Rectangle rectangle = new Rectangle(1, 1, 1, 2);
         Canvas canvas = new Canvas(20, 4);
         rectangle.stream(canvas.charStream, 'x');

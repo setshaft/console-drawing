@@ -8,12 +8,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class DrawLineTest {
     @Test
-    public void testCreate() throws Exception {
+    public void line() throws Exception {
         new DrawLine("1", "1", "1", "2");
     }
 
     @Test
-    public void testCreate1() throws Exception {
+    public void getters() throws Exception {
         DrawLine line = new DrawLine("1", "1", "1", "2");
         int x1 = line.getX1();
         int x2 = line.getX2();
@@ -26,22 +26,22 @@ public class DrawLineTest {
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate2() throws Exception {
+    public void invalidLine1() throws Exception {
         new DrawLine("1", "1", "2", "2");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate3() throws Exception {
+    public void invalidLine2() throws Exception {
         new DrawLine("1", "1");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate4() throws Exception {
+    public void invalidLine3() throws Exception {
         new DrawLine("1");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate6() throws Exception {
+    public void invalidLine4() throws Exception {
         new DrawLine();
     }
 }

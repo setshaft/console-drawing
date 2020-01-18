@@ -7,7 +7,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class LineTest {
     @Test
-    public void create() throws Exception {
+    public void line() throws Exception {
         Line line = new Line(1, 2, 1, 3);
         int x1 = line.getX1();
         int x2 = line.getX2();
@@ -20,7 +20,7 @@ public class LineTest {
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void create7() throws Exception {
+    public void stream() throws Exception {
         Line line = new Line(1, 2, 3, 4);
         Canvas canvas = new Canvas(20, 4);
         line.stream(canvas.charStream, 'x');

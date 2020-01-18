@@ -6,12 +6,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class BucketTest {
     @Test
-    public void create() throws Exception {
+    public void bucket() throws Exception {
         new Bucket(1, 2, 'o');
     }
 
     @Test
-    public void create3() throws Exception {
+    public void getters() throws Exception {
         Bucket fill = new Bucket(1, 2, 'o');
         int x = fill.getX();
         int y = fill.getY();
@@ -22,7 +22,7 @@ public class BucketTest {
     }
 
     @Test
-    public void create4() throws Exception {
+    public void stream() throws Exception {
         Bucket fill = new Bucket(10, 3, 'o');
         Canvas canvas = new Canvas(20, 4);
         fill.stream(10, 3, canvas.charStream, 4, 20);

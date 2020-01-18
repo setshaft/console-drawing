@@ -8,12 +8,12 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class CreateCanvasTest {
     @Test
-    public void testCreate() throws Exception {
+    public void createCanvas() throws Exception {
         new CreateCanvas("1", "1");
     }
 
     @Test
-    public void testCreate2() throws Exception {
+    public void getters() throws Exception {
         CreateCanvas canvas = new CreateCanvas("1", "1");
         int height = canvas.getHeight();
         int width = canvas.getWidth();
@@ -21,18 +21,13 @@ public class CreateCanvasTest {
         Assert.assertThat(width, is(1));
     }
 
-    // @Test(expected = InvalidCommandArguments.class)
-    // public void testCreate3() throws Exception {
-    // new CreateCanvas("1", "-1");
-    // }
-
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate4() throws Exception {
+    public void invalidCreateCanvas() throws Exception {
         new CreateCanvas("1");
     }
 
     @Test(expected = InvalidCommandArguments.class)
-    public void testCreate6() throws Exception {
+    public void invalidCreateCanvas1() throws Exception {
         new CreateCanvas();
     }
 }
