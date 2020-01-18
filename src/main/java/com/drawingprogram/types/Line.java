@@ -1,5 +1,6 @@
 package com.drawingprogram.types;
 
+import com.drawingprogram.exceptions.InvalidCommandArguments;
 import com.drawingprogram.interfaces.SupportedType;
 
 public class Line implements SupportedType {
@@ -11,26 +12,18 @@ public class Line implements SupportedType {
 
   public Line(final int _x1, final int _y1, final int _x2, final int _y2) {
     if (_x1 != _x2 && _y1 != _y2) {
-      throw new IllegalArgumentException("Draw line does not support diagonal line at the moment");
+      throw new InvalidCommandArguments("Draw line does not support diagonal line at the moment",
+          "Try drawing horizontal or vertical line");
     }
 
-    if ((x1 == x2 && y1 > y2) || (y1 == y2 && x1 > x2)) {
-      this.x1 = _x2;
-      this.y1 = _y2;
-      this.x2 = _x1;
-      this.y2 = _y1;
-    } else {
-      this.x1 = _x1;
-      this.y1 = _y1;
-      this.x2 = _x2;
-      this.y2 = _y2;
-    }
+    setX1(_x1);
+    setY1(_y1);
+    setX2(_x2);
+    setY2(_y2);
+
   }
 
   public char[][] stream(char[][] charStream, char character) {
-    if (!((x1 == x2) || (y1 == y2))) {
-      throw new IllegalArgumentException("Currently only horizontal or vertical lines are supported");
-    }
     for (int yAxis = y1; yAxis <= y2; yAxis++) {
       for (int xAxis = x1; xAxis <= x2; xAxis++) {
         charStream[yAxis][xAxis] = character;
@@ -70,4 +63,16 @@ public class Line implements SupportedType {
   public void setY2(int y2) {
     this.y2 = y2;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + x1;
+    result = prime * result + x2;
+    result = prime * result + y1;
+    result = prime * result + y2;
+    return result;
+  }
+
 }

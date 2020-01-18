@@ -7,9 +7,6 @@ public class Canvas {
   char[][] charStream;
   int width, height;
 
-  public Canvas() {
-  }
-
   public Canvas(final int width, final int height) {
     if (width < 1 || height < 1) {
       throw new IllegalArgumentException("Canvas measurements cannot be less than 1");
@@ -57,15 +54,7 @@ public class Canvas {
 
   public void streamRectangle(Rectangle rectangle, final char character) {
     checkIfCanvasIsThere();
-
-    int x1 = rectangle.getX1();
-    int x2 = rectangle.getX2();
-    int y1 = rectangle.getY1();
-    int y2 = rectangle.getY2();
-    streamLine(new Line(x1, y1, x2, y1), character);
-    streamLine(new Line(x1, y1, x1, y2), character);
-    streamLine(new Line(x2, y1, x2, y2), character);
-    streamLine(new Line(x1, y2, x2, y2), character);
+    this.charStream = rectangle.stream(charStream, character);
   }
 
   public void fillColor(Bucket bucket) {

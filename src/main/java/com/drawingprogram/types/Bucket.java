@@ -8,9 +8,9 @@ public class Bucket implements SupportedType {
   private char character;
 
   public Bucket(int _x1, int _y1, char character) {
-    this.x = _x1;
-    this.y = _y1;
-    this.character = character;
+    setX(_x1);
+    setY(_y1);
+    setCharacter(character);
   }
 
   public char[][] stream(int start, int end, char[][] charStream, int height, int width) {
@@ -52,4 +52,15 @@ public class Bucket implements SupportedType {
   public void setCharacter(char character) {
     this.character = character;
   }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + character;
+    result = prime * result + x;
+    result = prime * result + y;
+    return result;
+  }
+
 }

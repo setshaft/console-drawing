@@ -1,4 +1,4 @@
-package com.drawingprogram.app;
+package com.drawingprogram.types;
 
 public final class Constants {
 
@@ -10,10 +10,10 @@ public final class Constants {
 
   public static String EMPTY_CANVAS35 = "-----\n|   |\n|   |\n|   |\n|   |\n|   |\n-----\n";
 
-  public static String LINE1214 = "-----\n|   |\n|X  |\n|X  |\n|X  |\n|   |\n-----\n";
-
-  public static String RECTANGLE141183 = "----------------------\n|             XXXXX  |\n|             X   X  |\n|             XXXXX  |\n|                    |\n----------------------\n";
+  public static String RECTANGLE141183 = "----------------------\n|             xxxxx  |\n|             x   x  |\n|             xxxxx  |\n|                    |\n----------------------\n";
 
   public static String FILL103 = "----------------------\n" + "|oooooooooooooooooooo|\n" + "|oooooooooooooooooooo|\n"
       + "|oooooooooooooooooooo|\n" + "|oooooooooooooooooooo|\n" + "----------------------\n";
+
+  public static String LINE2242 = "----------------------\n|                    |\n| xxx                |\n|                    |\n|                    |\n----------------------\n";
 }
