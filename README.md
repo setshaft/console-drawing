@@ -8,7 +8,7 @@ Note that this program require `Java 8`.
 
 maven - 1.8
 
-junit - 5.3.1
+junit - 4.12
 
 jacoco - 0.8.2 # to generate coverage files
 
@@ -22,7 +22,19 @@ Which will execute the code and gives the chance to enter command.
 
 As long as your compiler supports Java 8 or higher, there should be no errors.
 
-Please find the commands supported from problem statement below.
+Usage
+
+```
+Command 		Description
+C w h           Create a new canvas of width w and height h.
+L x1 y1 x2 y2   Create a new line of 'x' from (x1,y1) to (x2,y2). Only support
+                horizontal or vertical lines.
+R x1 y1 x2 y2   Create a new rectangle, (x1,y1) is upper left corner & (x2,y2) is
+                lower right corner.
+B x y c         Fill the entire area around (x,y) with "colour" c.
+                Same as that of the "bucket fill" tool in paint programs.
+Q               Quit.
+```
 
 For running tests and checking the coverage run
 
@@ -30,17 +42,43 @@ For running tests and checking the coverage run
 
 After the command is executed successfully, Code Coverage can be found at `${root path}/target/site/jacoco/index.html` after executing the above command.
 
+### Test Information
+
+[INFO] Results:
+
+[INFO] Tests run: 45, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] Analyzed bundle 'console-drawing' with 15 classes
+
+### Code Coverage
+
+com.drawingprogram.types 98%
+
+com.drawingprogram.commands 100%
+
 ### Structure of the project:
 
     .
     ├── ...
-    ├── src/main/java/com/drawingprogram/app # main code
-    │   ├── App                 # Main class
-    │   ├── DrawingHelper       # Helper class which has all the logic
-    └── src/test/java/com/drawingprogram/app # unit tests
-    │   ├── AppTest
-    │   ├── Constants     # Constants used in test cases
-    │   ├── DrawingHelperTest
+    ├── src/main/java/com/drawingprogram/
+    │   ├── commands
+    │   |   ├── CommandProcessor
+    │   |   ├── CreateCanvas
+    │   |   ├── DrawFill
+    │   |   ├── DrawLine
+    │   |   ├── DrawRectangle
+    │   |   ├── Quit
+    │   ├── exceptions
+    │   |   ├── InvalidCommandArguments
+    │   |   ├── InvalidCommandException
+    │   |   ├── InvalidCommandTypeException
+    │   ├── types                       #helpers
+    │   |   ├── Bucket
+    │   |   ├── Canvas
+    │   |   ├── Line
+    │   |   ├── Rectangle
+    │   |   ├── TypeHelper
+    |   ├── Main
     └── ...
 
 ## Problem Statement
